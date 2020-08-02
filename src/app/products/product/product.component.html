@@ -1,0 +1,30 @@
+<div class="product">
+	<div class="product__image-wrapper" *ngIf="product.image; else noImage">
+		<img [src]="product.image" [alt]="product.title" class="product__image">
+	</div>
+	<ng-template #noImage>
+		<div class="product__image-wrapper">
+			<img src="../../../assets/images/150.png" [alt]="product.title" class="product__image">
+		</div>
+	</ng-template>
+	<div class="product__details">
+		<div class="details">
+			<div class="details__title">{{product.title}}</div>
+			<div class="details__description">{{product.description}}</div>
+		</div>
+		<div class="price">
+			<div class="price__current" *ngIf="!discount_price; else discountPrice">{{product.price}} Р</div>
+			<ng-template #discountPrice>
+				<div class="price__discount" #discountPrice>{{product.discount_price}} Р</div>
+			</ng-template>
+		</div>
+		<div class="actions" *ngIf="isProductInCart$ | async; else NgElse">
+			<button class="actions__remove-from-cart" (click)="removeFromCart()">Remove from
+				cart</button>
+		</div>
+		<ng-template #NgElse>
+			<button class="actions__add-to-cart" (click)="addToCart()">Add to
+				cart</button>
+		</ng-template>
+	</div>
+</div>

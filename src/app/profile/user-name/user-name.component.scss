@@ -1,0 +1,10 @@
+.field {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+
+	&__label,
+	&__input {
+		display: inline-flex;
+	}
+}

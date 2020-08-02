@@ -1,0 +1,33 @@
+<div class="user-name" *ngIf="userName$ | async as userName">
+	<div *ngIf="!isEdit; else form">
+		<label class="field">
+			<span class="field__label">
+				Full Name:
+			</span>
+			{{userName.firstName}} {{userName.lastName}}
+		</label>
+		<button class="form__button" (click)="toggleForm()">Edit</button>
+	</div>
+</div>
+<ng-template #form>
+	<form class="form" [formGroup]="nameForm" (ngSubmit)="onSubmit()">
+		<div class="form__field">
+			<label class="field">
+				<span class="field__label">
+					First Name:
+				</span>
+				<input class="field__input" type="text" formControlName="firstName">
+			</label>
+		</div>
+		<div class="form__field">
+			<label class="field">
+				<span class="field__label">
+					Last Name:
+				</span>
+				<input class="field__input" type="text" formControlName="lastName">
+			</label>
+		</div>
+		<button class="form__button" type="submit">Submit</button>
+		<button class="form__button" (click)="toggleForm()">Cancel</button>
+	</form>
+</ng-template>

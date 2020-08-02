@@ -1,0 +1,11 @@
+<div class="category" [routerLink]="['/category', uid]">
+	<div class="category__image-wrapper" *ngIf="icon; else noImage">
+		<img [src]="icon" [alt]="title" class="category__image">
+	</div>
+	<ng-template #noImage>
+		<div class="category__image-wrapper">
+			<img src="../../../assets/images/150.png" [alt]="title" class="category__image">
+		</div>
+	</ng-template>
+	<div class="category__title">{{title}}</div>
+</div>

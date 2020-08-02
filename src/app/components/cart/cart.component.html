@@ -1,0 +1,3 @@
+<div *ngFor="let productId of productsInCart$ | async">
+	<div>{{productId}} <button (click)="removeFromCart(productId)">x</button></div>
+</div>

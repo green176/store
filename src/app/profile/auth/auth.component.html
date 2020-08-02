@@ -1,0 +1,40 @@
+<div class="auth">
+	<div class="auth__container">
+		<div class="auth__title">
+			Authorization
+		</div>
+		<form [formGroup]="authForm" (ngSubmit)="onSubmit()" class="auth__from form">
+			<div class="form__field">
+				<label class="field">
+					<span class="field__label">
+						E-mail:
+					</span>
+					<input class="field__input" type="text" formControlName="email">
+				</label>
+				<div class="form__error" *ngIf="email.touched || submitted">
+					<span *ngIf="email.errors?.required">
+						Email is required.
+					</span>
+					<span *ngIf="email.errors?.email">
+						Value has to be a valid email address.
+					</span>
+				</div>
+			</div>
+			<div class="form__field">
+				<label class="field">
+					<span class="field__label">
+						Password:
+					</span>
+					<input class="field__input" type="password" formControlName="password">
+				</label>
+				<div class="form__error" *ngIf="(password.touched || submitted) && password.errors?.required">
+					Password is required.
+				</div>
+			</div>
+			<button class="form__button" type="submit">Submit</button>
+		</form>
+		<div class="auth__footer">
+			Have no profile? <a [routerLink]="['/signup']">Sign Up</a>
+		</div>
+	</div>
+</div>

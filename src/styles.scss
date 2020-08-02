@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/fonts/Roboto/roboto.scss';
+
+// primary font
+$primary_font: 'Roboto';
+// font-weight
+$thin: 100;
+$light: 300;
+$regular: 400;
+$bold: 700;
+$black: 900;
+:root {
+	--bg-color: #fff;
+	--text-color: #000;
+	--card-shadow: 0px 0px 10px 0px rgba(201, 201, 201, 0.5);
+	--card-shadow-hover: 0px 0px 15px 3px rgba(150, 150, 150, 0.7);
+	--error-price-color: #c92a2a;
+	--discount-price-color: #c92a2a;
+	--add-to-cart-button-shadow: inset 0px 0px 10px 0px rgba(150, 207, 250, 0.4);
+	--add-to-cart-button-shadow-hover: inset 0px 0px 15px 3px rgba(95, 186, 255, 0.8);
+	--remove-from-cart-button-shadow: inset 0px 0px 10px 0px rgba(250, 150, 150, 0.4);
+	--remove-from-cart-button-shadow-hover: inset 0px 0px 15px 3px rgba(255, 95, 95, 0.8);
+	--divider-color: inset 0px 0px 15px 3px rgb(41, 157, 246);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg-color: #443f41;
+		--text-color: #bcb8bb;
+		--card-shadow: 0px 0px 10px 0px #323232;
+		--card-shadow-hover: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+	}
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: $primary_font;
+	font-size: 16px;
+	font-weight: $regular;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+
+* {
+	box-sizing: border-box;
+}

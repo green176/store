@@ -1,0 +1,49 @@
+.category {
+	display: flex;
+	flex-direction: column;
+	padding: 5px;
+	margin: 5px;
+	width: 140px;
+	align-items: center;
+	box-shadow: var(--card-shadow);
+	transition: box-shadow 1s ease-out;
+
+	@media all and (min-width: 375px) {
+		width: 160px;
+	}
+
+	&:hover {
+		box-shadow: var(--card-shadow-hover);
+	}
+
+	&__image-wrapper {
+		margin-bottom: 5px;
+		width: 130px;
+		height: 130px;
+
+		@media all and (min-width: 375px) {
+			max-width: 150px;
+			height: 150px;
+		}
+	}
+
+	&__image {
+		width: 100%;
+		object-fit: contain;
+		max-width: 130px;
+		height: 130px;
+
+		@media all and (min-width: 375px) {
+			max-width: 150px;
+			height: 150px;
+		}
+	}
+
+	&__title {
+		font-size: 1rem;
+		max-height: 40px;
+		overflow: hidden;
+		margin-bottom: 2px;
+		text-align: center;
+	}
+}

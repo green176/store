@@ -1,0 +1,18 @@
+.product-list {
+	&__container {
+		padding: 5px;
+		display: flex;
+		justify-content: center;
+	}
+
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		margin: -5px;
+		width: 300px;
+
+		@media all and (min-width: 375px) {
+			width: 340px;
+		}
+	}
+}

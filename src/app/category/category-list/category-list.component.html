@@ -1,0 +1,9 @@
+<div class="category-list">
+	<div class="category-list__container">
+		<div class="category-list__content">
+			<app-category *ngFor="let entity of categories$ | async" [uid]="entity.uid" [title]="entity.title"
+				[icon]="entity.icon">
+			</app-category>
+		</div>
+	</div>
+</div>

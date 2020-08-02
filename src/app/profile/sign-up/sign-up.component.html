@@ -1,0 +1,58 @@
+<div class="sign-up">
+	<div class="sign-up__container">
+		<div class="sign-up__title">
+			Sign up
+		</div>
+		<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="sign-up__from form">
+			<div class="form__field">
+				<label class="field">
+					<span class="field__label">
+						E-mail:
+					</span>
+					<input class="field__input" type="text" formControlName="email">
+				</label>
+				<div class="form__error" *ngIf="email.touched || submitted">
+					<span *ngIf="email.errors?.required">
+						Email is required.
+					</span>
+					<span *ngIf="email.errors?.email">
+						Value has to be a valid email address.
+					</span>
+				</div>
+			</div>
+			<div class="form__field">
+				<label class="field">
+					<span class="field__label">
+						Password:
+					</span>
+					<input class="field__input" type="password" formControlName="password">
+				</label>
+				<div class="form__error" *ngIf="(password.touched || submitted)">
+					<span *ngIf="password.errors?.required">
+						Password is required.
+					</span>
+				</div>
+			</div>
+			<div class="form__field">
+				<label class="field">
+					<span class="field__label">
+						Re Password:
+					</span>
+					<input class="field__input" type="password" formControlName="rePassword">
+				</label>
+				<div class="form__error" *ngIf="(rePassword.touched || submitted)">
+					<span *ngIf="rePassword.errors?.required">
+						Password is required.
+					</span>
+					<span *ngIf="rePassword.errors?.passwordMismatch">
+						Passwords does not match
+					</span>
+				</div>
+			</div>
+			<button class="form__button" type="submit">Submit</button>
+		</form>
+		<div class="sign-up__footer">
+			Have profile? <a [routerLink]="['/auth']">Sign In</a>
+		</div>
+	</div>
+</div>

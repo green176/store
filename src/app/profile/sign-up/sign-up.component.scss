@@ -1,0 +1,41 @@
+.sign-up {
+	padding-top: 20px;
+	&__container {
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+	&__title {
+		text-align: center;
+		text-transform: uppercase;
+		margin-bottom: 10px;
+	}
+	&__footer {
+		margin-top: 20px;
+		text-align: center;
+	}
+}
+
+.form {
+	&__error {
+		font-size: 0.75rem;
+		color: var(--error-price-color);
+		text-align: right;
+	}
+	&__button {
+		display: block;
+		margin-top: 10px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.field {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+
+	&__label,
+	&__input {
+		display: inline-flex;
+	}
+}
